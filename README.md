@@ -25,5 +25,3 @@ build.
 If you replace `output.circle-artifacts.com` with
 `circle.scientific-python.dev`, the requests will go through this
 proxy (see `worker.js`), and will render pages correctly, as described above.
-
-**TODO:** Update `circleci-artifact-redirector-action` to accept a different base domain.
