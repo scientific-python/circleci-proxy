@@ -11,7 +11,10 @@ async function handleRequest(originalRequest) {
   const proxyUrl = new URL(ORIGIN);
   proxyUrl.pathname = originalUrl.pathname;
 
-  let response = await fetch(proxyUrl.toString(), originalRequest);
+  let response = await fetch(proxyUrl.toString(), {
+    ...originalRequest,
+    redirect: 'follow'
+  });
 
   // If the requested path is not found, attempt fallback paths
   if (response.status === 404) {
